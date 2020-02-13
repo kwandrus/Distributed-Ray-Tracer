@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\Background.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\BoundingBox.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\Camera.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\Color.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\ConstantBackground.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\Group.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\Image.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\LambertianMaterial.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\Light.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\Material.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\Object.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\Parser.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\PinholeCamera.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\Plane.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\Point.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\PointLight.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\Primitive.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\Scene.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\Sphere.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\Time.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\Vector.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\specter.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\Background.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\BoundingBox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\Camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\Color.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\ConstantBackground.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\Group.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\HitRecord.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\Image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\LambertianMaterial.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\Light.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\Material.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\Math.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\Object.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\Parser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\PinholeCamera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\Plane.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\Point.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\PointLight.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\Primitive.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\Ray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\RenderContext.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\Scene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\Sphere.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\Time.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\Vector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{13E17E4C-0017-3474-A861-E1E6BE8A9F1F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{61D2E70D-E14A-3055-88B0-167CE6314AEB}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

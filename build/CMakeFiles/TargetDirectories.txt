@@ -1,0 +1,3 @@
+C:/Users/Kyle/Documents/ecs275a/Programs/Distributed-Ray-Tracer/build/CMakeFiles/specter.dir
+C:/Users/Kyle/Documents/ecs275a/Programs/Distributed-Ray-Tracer/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/Kyle/Documents/ecs275a/Programs/Distributed-Ray-Tracer/build/CMakeFiles/ZERO_CHECK.dir
