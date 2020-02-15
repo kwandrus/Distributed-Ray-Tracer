@@ -25,7 +25,7 @@ void ThinLensCamera::preprocess(double aspect_ratio)
     u.normalize();
     u *= ulen;
     double vlen = ulen/aspect_ratio;
-    v.normalize(); 
+    v.normalize();
     v *= vlen;
 }
 
