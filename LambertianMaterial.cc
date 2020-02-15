@@ -11,8 +11,8 @@
 #include "Math.h"
 using namespace std;
 
-LambertianMaterial::LambertianMaterial(const Color& color, float Kd, float Ka, float Ks, int n)
-  :color(color), Kd(Kd), Ka(Ka), Ks(Ks), n(n)
+LambertianMaterial::LambertianMaterial(const Color& color, float Kd, float Ka, float Ks, int n, bool isReflective)
+  :color(color), Kd(Kd), Ka(Ka), Ks(Ks), n(n), isReflective(isReflective)
 {
 }
 
@@ -20,10 +20,8 @@ LambertianMaterial::~LambertianMaterial()
 {
 }
 
-bool LambertianMaterial::isReflective() const {
-    if (Ks > 0)
-        return true;
-    return false;
+bool LambertianMaterial::getReflective() const {
+    return isReflective;
 }
 
 Color LambertianMaterial::getColor() const {
@@ -49,9 +47,7 @@ Color LambertianMaterial::shade(const RenderContext& context,
 
   const Object* world = scene->getObject();
 
-  // swap these lines to toggle global illumination
-  //Color light = scene->getAmbient()*Ka;
-  Color light(0, 0, 0);
+  Color light = scene->getAmbient()*Ka;
 
 #if 0
   for(vector<Light*>::const_iterator iter = lights.begin(); iter != lights.end(); iter++){
@@ -68,15 +64,24 @@ Color LambertianMaterial::shade(const RenderContext& context,
 
     Vector reflect_direction = 2 * Dot(normal, light_direction) * normal - light_direction;
     reflect_direction.normalize();
-    double cosbet = Dot(reflect_direction, ray.direction());
+
+    // multiply ray direction by -1 to use direction from hitpos back to eye
+    double cosbet = Dot(reflect_direction, ray.direction() * -1);
+
     if(cosphi > 0){
       // Cast shadow rays...
       HitRecord shadowhit(dist);
       Ray shadowray(hitpos, light_direction);
       world->intersect(shadowhit, context, shadowray);
-      if(!shadowhit.getPrimitive())
-        // No shadows...
-        light += light_color*(Kd*cosphi + Ks * pow(cosbet, n));
+      if (!shadowhit.getPrimitive()) {
+          // No shadows...
+          if (cosbet > 0) {
+              light += light_color * (Kd * cosphi + Ks * pow(cosbet, n));
+          }
+          else {
+              light += light_color * (Kd * cosphi);
+          }
+      }
     }
   }
   return light*color;

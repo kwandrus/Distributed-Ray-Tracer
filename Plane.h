@@ -18,6 +18,8 @@ class Plane : public Primitive {
   virtual void normal(Vector& normal, const RenderContext& context,
                       const Point & hitpos, const Ray& ray, const HitRecord& hit) const;
 
+  virtual void move(double time) {}
+
  private:
   Plane(const Plane&);
   Plane& operator=(const Plane&);

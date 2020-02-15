@@ -14,6 +14,10 @@ class PinholeCamera : public Camera {
   virtual void preprocess(double aspect_ratio);
   virtual void makeRay(Ray& ray, const RenderContext& context, double x, double y) const;
 
+  virtual int getNumSamples() const {
+      return 0;
+  }
+
  private:
   PinholeCamera(const PinholeCamera&);
   PinholeCamera& operator=(const PinholeCamera&);

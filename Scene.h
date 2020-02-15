@@ -75,7 +75,7 @@ class Scene {
     minAttenuation = atten;
   }
   void setNumSamples(int num) {
-      numSamples = num;
+      numAASamples = num;
   }
 
   void preprocess();
@@ -94,7 +94,7 @@ class Scene {
   Object* object;
   std::vector<Light*> lights;
   int maxRayDepth;
-  int numSamples;
+  int numAASamples;
   double minAttenuation;
 
 };

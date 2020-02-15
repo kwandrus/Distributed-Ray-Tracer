@@ -20,6 +20,9 @@ class Primitive : public Object {
   virtual void computeUVW(Vector& uvw, const RenderContext& context,
                           const Ray& ray, const HitRecord& hit) const;
 
+  virtual void move(double time) {}
+  virtual void moveObjects(double time) {}
+
  protected:
   Material* matl;
 

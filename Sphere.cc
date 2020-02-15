@@ -7,9 +7,14 @@
 #include "Vector.h"
 #include <math.h>
 
-Sphere::Sphere(Material* material, const Point& center, double radius)
+Sphere::Sphere(Material* material, const Point& center, double radius, Vector motionvelocity, int motionSamples)
   : Primitive(material), center(center), radius(radius)
 {
+    motionVelocity = motionvelocity;
+    numMotionSamples = motionSamples;
+    if (motionVelocity != 0) {
+        isMoving = true;
+    }
   inv_radius = 1./radius;
 }
 
@@ -39,6 +44,11 @@ void Sphere::intersect(HitRecord& hit, const RenderContext&, const Ray& ray) con
       hit.hit(root2, this, matl);
     }
   }
+}
+
+void Sphere::move(double time) {
+    Vector jitteredVec = motionVelocity * time;
+    center += jitteredVec;
 }
 
 void Sphere::normal(Vector& normal, const RenderContext&, const Point& hitpos,

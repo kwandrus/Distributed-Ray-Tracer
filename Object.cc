@@ -2,6 +2,7 @@
 #include "Object.h"
 
 Object::Object()
+	: isMoving(false), numMotionSamples(0), motionVelocity(0, 0, 0)
 {
 }
 

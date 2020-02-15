@@ -15,7 +15,7 @@ class Material {
   virtual void preprocess();
   virtual Color shade(const RenderContext& context, const Ray& ray,
                      const HitRecord& hit, const Color& atten, int depth) const = 0;
-  virtual bool isReflective() const = 0;
+  virtual bool getReflective() const = 0;
   virtual Color getColor() const = 0;
   virtual float getKs() const = 0;
 

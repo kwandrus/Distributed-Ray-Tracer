@@ -15,6 +15,10 @@ class Group : public Object {
   virtual void getBounds(BoundingBox& bbox) const;
   virtual void intersect(HitRecord& hit, const RenderContext& context, const Ray& ray) const;
 
+  void setGroupMotion();
+  virtual void moveObjects(double time);
+  virtual void move(double time) {}
+
  protected:
   std::vector<Object*> objects;
 

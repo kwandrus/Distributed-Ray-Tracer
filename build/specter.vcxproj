@@ -307,7 +307,9 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\ThinLensCamera.cc" />
     <ClCompile Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\Background.cc" />
+    <ClInclude Include="..\ThinLensCamera.h" />
     <ClInclude Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\Background.h" />
     <ClCompile Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\BoundingBox.cc" />
     <ClInclude Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\BoundingBox.h" />

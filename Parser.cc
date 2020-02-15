@@ -1,6 +1,7 @@
 
 #include "Parser.h"
 #include "PinholeCamera.h"
+#include "ThinLensCamera.h"
 #include "ConstantBackground.h"
 #include "PointLight.h"
 #include "LambertianMaterial.h"
@@ -334,6 +335,37 @@ Color const Parser::parseColor()
   return Color( v, v, v );
 }
 
+Camera* Parser::parseThinLensCamera()
+{
+    Point eye(0.0, 0.0, 0.0);
+    Point lookat(0.0, 1.0, 0.0);
+    Vector up(0.0, 0.0, 1.0);
+    double hfov = 90.0;
+    double aperture = 0;
+    int numDOFSamples = 0;
+    if (peek(Token::left_brace))
+        for (; ; )
+        {
+            if (peek("eye"))
+                eye = parsePoint();
+            else if (peek("lookat"))
+                lookat = parsePoint();
+            else if (peek("up"))
+                up = parseVector();
+            else if (peek("hfov"))
+                hfov = parseReal();
+            else if (peek("aperture"))
+                aperture = parseReal();
+            else if (peek("numsamples"))
+                numDOFSamples = parseInteger();
+            else if (peek(Token::right_brace))
+                break;
+            else
+                throwParseException("Expected `eye', `lookat', `up', `hfov', `aperture', `numsamples' or }.");
+        }
+    return new ThinLensCamera(eye, lookat, up, hfov, aperture, numDOFSamples);
+}
+
 Camera *Parser::parsePinholeCamera()
 {
   Point eye( 0.0, 0.0, 0.0 );
@@ -361,8 +393,10 @@ Camera *Parser::parsePinholeCamera()
 
 Camera *Parser::parseCamera()
 {
-    if ( peek( "pinhole" ) )
+    if (peek("pinhole"))
         return parsePinholeCamera();
+    else if (peek("thinlens"))
+        return parseThinLensCamera();
     throwParseException( "Expected a camera type." );
     return 0;
 }
@@ -425,6 +459,7 @@ Material *Parser::parseLambertianMaterial()
   double Ka = 0.3;
   double Ks = 0.2;
   int n = 1;
+  bool isReflective = false;
   if ( peek( Token::left_brace ) )
     for ( ; ; )
     {
@@ -438,12 +473,14 @@ Material *Parser::parseLambertianMaterial()
             Ks = parseReal();
         else if (peek("n"))
             n = parseReal();
+        else if (peek("isReflective"))
+            isReflective = parseBoolean();
       else if ( peek( Token::right_brace ) )
         break;
       else
-        throwParseException( "Expected `color', `Kd', `Ka', `Ks', `n' or }." );
+        throwParseException( "Expected `color', `Kd', `Ka', `Ks', `n', `isReflective' or }." );
     }
-  return new LambertianMaterial( color, Kd, Ka, Ks, n );
+  return new LambertianMaterial( color, Kd, Ka, Ks, n, isReflective);
 }
 
 Material *Parser::parseMaterial()
@@ -466,6 +503,7 @@ Object *Parser::parseGroupObject()
     match( Token::left_brace, "Expected a left brace" );
     while ( !peek( Token::right_brace ) )
         group->addObject( parseObject() );
+    group->setGroupMotion();
     return group;
 }
 
@@ -496,6 +534,8 @@ Object *Parser::parseSphereObject()
   Material *material = default_material;
   Point center( 0.0, 0.0, 0.0 );
   double radius = 0.5;
+  Vector motionVelocity(0.0, 0.0, 0.0);
+  int motionSamples = 0;
   if ( peek( Token::left_brace ) )
     for ( ; ; )
     {
@@ -505,12 +545,16 @@ Object *Parser::parseSphereObject()
         center = parsePoint();
       else if ( peek( "radius" ) )
         radius = parseReal();
+      else if (peek("motionvelocity"))
+          motionVelocity = parseVector();
+      else if (peek("motionsamples"))
+          motionSamples = parseInteger();
       else if ( peek( Token::right_brace ) )
         break;
       else
-        throwParseException( "Expected `material', `center', `radius' or }." );
+        throwParseException( "Expected `material', `center', `radius', `motionvelocity', `motionsamples' or }." );
     }
-  return new Sphere( material, center, radius );
+  return new Sphere( material, center, radius, motionVelocity, motionSamples);
 }
 
 Object *Parser::parseObject()
@@ -536,7 +580,7 @@ Parser::Parser(
   : input( input ),
     line_number( 1 ),
     column_number( 0 ),
-    default_material( new LambertianMaterial( Color( 1.0, 1.0, 1.0 ), 0.6, 0.3, 0.2, 1 ) )
+    default_material( new LambertianMaterial( Color( 1.0, 1.0, 1.0 ), 0.6, 0.3, 0.2, 1, true ) )
 {
   readNextToken();
 }

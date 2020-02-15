@@ -85,6 +85,11 @@ class Vector {
   Vector operator/(const Vector& v) const {
     return Vector(data[0]/v.data[0], data[1]/v.data[1], data[2]/v.data[2]);
   }
+  bool operator!=(int s) const {
+      if (data[0] != s || data[1] != s || data[2] != s)
+          return true;
+      return false;
+  }
 
   double length() const {
     return sqrt(data[0]*data[0]+data[1]*data[1]+data[2]*data[2]);

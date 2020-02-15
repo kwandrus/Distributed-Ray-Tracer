@@ -64,6 +64,7 @@ class Parser {
   Point const parsePoint();
   Color const parseColor();
 
+  Camera* parseThinLensCamera();
   Camera *parsePinholeCamera();
   Camera *parseCamera();
 

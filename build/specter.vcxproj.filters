@@ -67,6 +67,9 @@
     <ClCompile Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\specter.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\ThinLensCamera.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\Background.h">
@@ -144,16 +147,19 @@
     <ClInclude Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\Vector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\ThinLensCamera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\Kyle\Documents\ecs275a\Programs\Distributed-Ray-Tracer\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{13E17E4C-0017-3474-A861-E1E6BE8A9F1F}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files">
       <UniqueIdentifier>{61D2E70D-E14A-3055-88B0-167CE6314AEB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{13E17E4C-0017-3474-A861-E1E6BE8A9F1F}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
