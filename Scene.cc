@@ -181,23 +181,3 @@ Color Scene::traceRay(const RenderContext& context, const Ray& ray, const Color&
 
     return result;
 }
-
-//double Scene::traceRay(Color& result, const RenderContext& context, const Object* obj, const Ray& ray, const Color& atten, int depth) const
-//{
-//  if(depth >= maxRayDepth || atten.maxComponent() < minAttenuation){
-//    result = Color(0, 0, 0);
-//    return 0;
-//  } else {
-//    HitRecord hit(DBL_MAX);
-//    obj->intersect(hit, context, ray);
-//    if(hit.getPrimitive()){
-//      // Ray hit something...
-//      const Material* matl = hit.getMaterial();
-//      //matl->shade(result, context, ray, hit, atten, depth);
-//      return hit.minT();
-//    } else {
-//      background->getBackgroundColor(result, context, ray);
-//      return DBL_MAX;
-//    }
-//  }
-//}

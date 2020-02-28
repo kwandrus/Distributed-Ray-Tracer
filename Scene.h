@@ -82,7 +82,6 @@ class Scene {
   void moveObjects(Color& result, const RenderContext& context, const Ray& ray, const Color& atten);
   void render();
   Color traceRay(const RenderContext& context, const Ray& ray, const Color& attenuation, int depth) const;
-  double traceRay(Color& result, const RenderContext& context, const Object* obj, const Ray& ray, const Color& attenuation, int depth) const;
 
  private:
   Scene(const Scene&);
