@@ -7,7 +7,7 @@ The base image shows the final ray traced product of Program 1 without the effec
 ![base image](./final%20images/base.png)
 
 ## Anti-Aliasing
-In the input file, I specify the number of samples to take per pixel labelled ‘samplesperpixel’. I found that 25 samples using jittered sampling produce a good enough effect, so the below image displays that result. The end effect shows smoothness around the edge of the spheres and the edge of the plane.  
+In the input file, I specify the number of samples to take per pixel labeled ‘samplesperpixel’. I found that 25 samples using jittered sampling produce a good enough effect, so the below image displays that result. The end effect shows smoothness around the edge of the spheres and the edge of the plane.  
 
 ![base image](./final%20images/anti_aliasing.png)
 
@@ -26,7 +26,7 @@ In the input file, I add to a primitive’s parameters by specifying the motion 
 ![base image](./final%20images/motion_blur2.png)
 
 ## Combined Effects
-Anti-aliasing, depth of field, and motion blur are all active in the following images. Even though I specify a separate “number of samples” parameter for each effect, the anti-aliasing parameter is used for depth of field and motion blur when used in conjunction with anti-aliasing.  
+Anti-aliasing, depth of field, and motion blur are all active in the following images.
 
 ### Blue sphere in focus, red sphere in motion
 ![base image](./final%20images/final.png)  
